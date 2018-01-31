@@ -16,6 +16,18 @@ app.post('/test', function (req, res) {
 })
 ```
 
+
 ```
-{"sum":6}
+url: http://localhost:3000/test
+body:
+    {
+        "data": 	{ 
+            "x": 4, 
+            "y": 2
+            
+        }
+    }
+```
+```
+Output: {"sum":6}
 ```
