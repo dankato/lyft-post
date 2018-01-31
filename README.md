@@ -6,16 +6,28 @@ The code in Node.
 * accepts two arguments “x” and “y” 
 * returns a JSON object {“sum”: x+y}. 
 
+### Setup
+1. clone
+2. npm install
+3. run 'node app'
+4. curl -X POST http://localhost:3000/test --data '{"x": 5, "y": 2}' -H 'Content-Type: application/json'
 
+### Post request
 ```
 app.post('/test', function (req, res) {
-    response = {
-      sum: req.body.data.x + req.body.data.y,
+    let x = req.body.x;
+    let y = req.body.y;
+    let xp = parseInt(x);
+    let yp = parseInt(y);
+    let s = xp + yp;
+
+    data = {
+      sum: s,
    };
-   res.end(JSON.stringify(response));
+   
+   res.send(data);
 })
 ```
-
 
 ```
 url: http://localhost:3000/test
